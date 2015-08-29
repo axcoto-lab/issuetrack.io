@@ -1,0 +1,39 @@
+@import "bootstrap/less/bootstrap";
+@import "./theme/variables.less";
+@import "./theme/bootswatch.less";
+
+html, body {
+  height: 100%;
+}
+
+.box {
+  display: inline-block;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #bbb;
+  box-shadow: 1px 2px 2px #938b71;
+  margin: 20px auto;
+  max-width: 450px;
+}
+
+.jumbotron {
+  height: 100%;
+  margin-bottom: 0;
+
+  background-image: url(../../build/images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron-header {
+  color: white;
+}
+
+.iconbar {
+  font-size: 1.8em;
+  margin: 10px auto;
+
+  > span {
+    padding: 0 5px;
+  }
+}

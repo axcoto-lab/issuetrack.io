@@ -1,0 +1,66 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>IssueTrack - Productivity tool for busy GitHub maintainers</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="build/css/main.css">
+  <link rel="stylesheet" href="vendor/pictonic/css/pictonic.css">
+</head>
+<body ng-app="issuetrack">
+  <div class="jumbotron">
+    <div class="container text-center">
+      <div class="jumbotron-header">
+        <h2><b>Issue</b>Track</h2>
+        <h1>Be on top of the pile!</h1>
+        <p>Productivity tool for busy GitHub maintainers</p>
+      </div>
+
+      <div class="box" ng-controller="SignupController as signup">
+        <div ng-hide="signup.submitted">
+          <span class="help-block">Sign up and get a chance to participate in our private beta</span>
+
+          <form name="signupForm" class="form" ng-submit="signup.submit()" novalidate>
+            <div class="form-group" ng-class="{
+              'has-error': signupForm.email.$invalid && signupForm.email.$dirty,
+              'has-success': signupForm.email.$valid && signupForm.email.$dirty
+            }">
+              <input name="email" type="email" class="form-control" placeholder="Email Address" required ng-model="signup.email">
+            </div>
+            <input type="submit" value="Sign up" class="btn btn-primary btn-block" ng-disabled="signupForm.$dirty && signupForm.$invalid"></input>
+          </form>
+        </div>
+
+        <div ng-show="signup.submitted">
+          <div class="alert alert-success" role="alert"><b>Done!</b> Your email has been added to the beta tester list!</div>
+
+          <div class="text-left">
+            <!-- TODO: Add facebook share icon -->
+            <a href="https://twitter.com/share" class="twitter-share-button" data-text="Coming soon! IssueTrack, a productivity tool for busy GitHub maintainers!" data-hashtags="IssueTrack">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div>
+          <small>Get in touch with us at <a href="mailto:support@issuetrack.io">support@issuetrack.io</a></small>
+        </div>
+
+        <div class="iconbar">
+          <span class="icon-os-apple"></span>
+          <span class="icon-os-win-04"></span>
+          <span class="icon-os-linux_1_"></span>
+        </div>
+
+        <small>Unified experience across major operating systems</small>
+      </footer>
+    </div>
+
+  </div>
+
+  <!--[if lt IE 8]><script src="vendor/pictonic/js/pictonic.min.js"></script><![endif]-->
+  <script src="build/js/app.js"></script>
+</body>
+</html>
