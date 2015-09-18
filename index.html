@@ -34,13 +34,13 @@
     <div class="container text-center">
       <div class="jumbotron-header">
         <h2><b>Issue</b>Track</h2>
-        <h1>Be on top of the pile!</h1>
-        <p>Productivity tool for busy GitHub maintainers</p>
+        <h1>GTD + GitHub Issues</h1>
+        <p>Manage huge flows of GitHub issues effectively with perspectives</p>
       </div>
 
-      <div class="box" ng-controller="SignupController as signup">
+      <div class="box" ng-cloak ng-controller="SignupController as signup">
         <div ng-hide="signup.submitted">
-          <span class="help-block">Sign up and get a chance to participate in our private beta</span>
+          <span class="help-block">Want to take an early stage peek into our product? Drop your email below and we'll be in touch soon!</span>
 
           <form name="signupForm" class="form" ng-submit="signup.submit()" novalidate>
             <div class="form-group" ng-class="{
@@ -49,13 +49,18 @@
             }">
               <input name="email" type="email" class="form-control" placeholder="Email Address" required ng-model="signup.email">
             </div>
-            <input type="submit" value="Sign up" class="btn btn-primary btn-block" ng-disabled="signupForm.$dirty && signupForm.$invalid"></input>
+            <input type="submit" value="Get me in!" class="btn btn-primary btn-block" ng-disabled="signupForm.$dirty && signupForm.$invalid"></input>
           </form>
         </div>
 
         <div ng-show="signup.submitted">
-          <div class="alert alert-success" role="alert"><b>Done!</b> Your email has been added to the beta tester list!</div>
+          <div class="alert alert-success" role="alert">
+            <b>Thank you!</b> Your email has been added to the beta tester list!
+          </div>
 
+          Do you have an awesome idea that you'd like to see in our product? Get in touch with us at <a href="mailto:support@issuetrack.io">support@issuetrack.io</a>.
+
+          <br><br>
           <div class="text-left">
             <!-- TODO: Add facebook share icon -->
             <a href="https://twitter.com/share" class="twitter-share-button" data-text="Coming soon! IssueTrack, a productivity tool for busy GitHub maintainers!" data-hashtags="IssueTrack">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
